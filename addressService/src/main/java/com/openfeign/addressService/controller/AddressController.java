@@ -16,7 +16,7 @@ public class AddressController {
     private AddressService addressService;
 
     @GetMapping("/address/{employeeId}")
-    private ResponseEntity<Object> getAddressByEmployeeId(@PathVariable("employeeId") int employeeId){
+    public ResponseEntity<Object> getAddressByEmployeeId(@PathVariable("employeeId") int employeeId){
         try {
             AddressDTO address = addressService.findAddressByEmployeeId(employeeId);
             return ResponseEntity.status(HttpStatus.OK).body(address);
